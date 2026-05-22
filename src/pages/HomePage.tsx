@@ -1,13 +1,13 @@
-import { useNavigate } from "react-router"
-import { createMemo } from "../hooks/useMemos"
+import { useNavigate } from "react-router";
+import { createMemo } from "../hooks/useMemos";
 
 export function HomePage() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleCreateMemo = async () => {
-    const id = await createMemo()
-    navigate(`/memo/${id}`)
-  }
+    const id = await createMemo();
+    navigate(`/memo/${id}`);
+  };
 
   return (
     <div className="flex-1 flex flex-col overflow-hidden">
@@ -45,7 +45,9 @@ export function HomePage() {
             <div className="bg-bg-secondary rounded-lg p-4 border border-border">
               <div className="flex items-center gap-2 mb-2">
                 <span className="icon-[mdi--pencil] text-accent text-xl" />
-                <h3 className="font-semibold text-text-primary">Markdown対応</h3>
+                <h3 className="font-semibold text-text-primary">
+                  Markdown対応
+                </h3>
               </div>
               <p className="text-sm text-text-secondary">
                 本格的なマークダウン記法で、美しくメモを作成
@@ -55,7 +57,9 @@ export function HomePage() {
             <div className="bg-bg-secondary rounded-lg p-4 border border-border">
               <div className="flex items-center gap-2 mb-2">
                 <span className="icon-[mdi--lock] text-accent text-xl" />
-                <h3 className="font-semibold text-text-primary">プライベート</h3>
+                <h3 className="font-semibold text-text-primary">
+                  プライベート
+                </h3>
               </div>
               <p className="text-sm text-text-secondary">
                 すべてのデータはブラウザに保存。サーバーに送信されません
@@ -84,5 +88,5 @@ export function HomePage() {
         </div>
       </div>
     </div>
-  )
+  );
 }
