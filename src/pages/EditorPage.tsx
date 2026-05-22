@@ -85,7 +85,7 @@ export function EditorPage() {
       editorProps: {
         attributes: {
           class:
-            "prose prose-invert prose-p:my-2 max-w-none focus:outline-none p-6 md:p-8 lg:p-12 min-h-full",
+            "prose prose-invert prose-p:my-2 print:prose print:!text-black print:!bg-white max-w-none focus:outline-none p-6 md:p-8 lg:p-12 min-h-full",
         },
       },
     },
