@@ -9,7 +9,7 @@ import { cloudflare } from "@cloudflare/vite-plugin";
 export default defineConfig({
 	plugins: [react(), tailwindcss(), VitePWA({
         registerType: "autoUpdate",
-        injectRegister: false,
+        injectRegister: "auto",
 
         pwaAssets: {
             disabled: false,
