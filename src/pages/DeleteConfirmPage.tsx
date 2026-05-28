@@ -115,15 +115,15 @@ export function DeleteConfirmPage() {
               プレビュー（最初の10行）
             </h2>
             <div className="text-sm text-text-muted space-y-2 max-h-48 overflow-auto">
-              {previewLines.length > 0
-                ? (
-                  previewLines.map((line, idx) => (
-                    <div key={idx} className="whitespace-pre-wrap">
-                      {line}
-                    </div>
-                  ))
-                )
-                : <div className="italic">（内容がありません）</div>}
+              {previewLines.length > 0 ? (
+                previewLines.map((line, idx) => (
+                  <div key={idx} className="whitespace-pre-wrap">
+                    {line}
+                  </div>
+                ))
+              ) : (
+                <div className="italic">（内容がありません）</div>
+              )}
             </div>
           </div>
 
@@ -141,9 +141,7 @@ export function DeleteConfirmPage() {
                 }}
                 className="w-5 h-5"
               />
-              <span className="text-sm">
-                この操作は元に戻せません
-              </span>
+              <span className="text-sm">この操作は元に戻せません</span>
             </label>
           </div>
 

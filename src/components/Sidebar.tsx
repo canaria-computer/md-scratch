@@ -106,32 +106,28 @@ export function Sidebar({ className }: SidebarProps) {
 
         {/* Memo list */}
         <nav className="flex-1 overflow-y-auto py-1">
-          {memos === undefined
-            ? (
-              <div className="px-3 py-4 text-text-muted text-sm text-center">
-                読み込み中…
-              </div>
-            )
-            : memos.length === 0
-            ? (
-              <div className="px-3 py-4 text-text-muted text-sm text-center">
-                メモがありません
-              </div>
-            )
-            : (
-              memos.map((memo) => (
-                // biome-ignore lint/a11y/useSemanticElements: Nested buttons are forbidden, so a div is used here
-                <div
-                  key={memo.id}
-                  onClick={() => handleSelect(memo.id)}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter" || e.key === " ") {
-                      handleSelect(memo.id);
-                    }
-                  }}
-                  role="button"
-                  tabIndex={0}
-                  className={`
+          {memos === undefined ? (
+            <div className="px-3 py-4 text-text-muted text-sm text-center">
+              読み込み中…
+            </div>
+          ) : memos.length === 0 ? (
+            <div className="px-3 py-4 text-text-muted text-sm text-center">
+              メモがありません
+            </div>
+          ) : (
+            memos.map((memo) => (
+              // biome-ignore lint/a11y/useSemanticElements: Nested buttons are forbidden, so a div is used here
+              <div
+                key={memo.id}
+                onClick={() => handleSelect(memo.id)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    handleSelect(memo.id);
+                  }
+                }}
+                role="button"
+                tabIndex={0}
+                className={`
 									w-full text-left px-3 py-2 mx-0
 									flex items-start justify-between group
 									transition-colors duration-100 cursor-pointer select-none
@@ -141,36 +137,36 @@ export function Sidebar({ className }: SidebarProps) {
                       : "hover:bg-bg-hover/50 border-l-2 border-transparent"
                   }
 								`}
-                >
-                  <div className="flex-1 min-w-0">
-                    <div
-                      className={`text-sm truncate ${
-                        memo.id === activeId
-                          ? "text-text-primary font-medium"
-                          : "text-text-secondary"
-                      }`}
-                    >
-                      {memo.title}
-                    </div>
-                    <div className="text-xs text-text-muted mt-0.5">
-                      {formatDate(memo.updatedAt)}
-                    </div>
+              >
+                <div className="flex-1 min-w-0">
+                  <div
+                    className={`text-sm truncate ${
+                      memo.id === activeId
+                        ? "text-text-primary font-medium"
+                        : "text-text-secondary"
+                    }`}
+                  >
+                    {memo.title}
                   </div>
-                  <button
-                    type="button"
-                    onClick={(e) => handleDelete(e, memo.id)}
-                    className="
+                  <div className="text-xs text-text-muted mt-0.5">
+                    {formatDate(memo.updatedAt)}
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  onClick={(e) => handleDelete(e, memo.id)}
+                  className="
 										shrink-0 ml-2 mt-0.5
 																				text-danger
 										transition-opacity cursor-pointer
 									"
-                    title="削除"
-                  >
-                    <span className="icon-[mdi--delete-outline] text-base" />
-                  </button>
-                </div>
-              ))
-            )}
+                  title="削除"
+                >
+                  <span className="icon-[mdi--delete-outline] text-base" />
+                </button>
+              </div>
+            ))
+          )}
         </nav>
       </aside>
     </>

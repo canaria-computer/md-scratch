@@ -27,10 +27,10 @@ function ToolbarButton({
 				flex items-center justify-center w-8 h-8 rounded-md
 				transition-colors duration-150 cursor-pointer
 				${
-        isActive
-          ? "bg-bg-hover text-accent"
-          : "text-text-secondary hover:text-text-primary hover:bg-bg-hover"
-      }
+          isActive
+            ? "bg-bg-hover text-accent"
+            : "text-text-secondary hover:text-text-primary hover:bg-bg-hover"
+        }
 				${className ?? ""}
 			`}
     >

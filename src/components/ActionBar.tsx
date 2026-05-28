@@ -47,8 +47,8 @@ export function ActionBar({ editor, memoId, className }: ActionBarProps) {
     if (doc.content) {
       for (const node of doc.content) {
         if (node.type === "heading" && node.attrs?.level === 1) {
-          const text = node.content?.map((c: any) => c.text ?? "").join("") ??
-            "";
+          const text =
+            node.content?.map((c: any) => c.text ?? "").join("") ?? "";
           if (text) {
             // Sanitize filename
             filename = text.replace(/[\\/:*?"<>|]/g, "_").slice(0, 50);

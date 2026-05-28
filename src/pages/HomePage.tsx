@@ -70,12 +70,7 @@ export function HomePage() {
           {/* CTA Button */}
           <button
             onClick={handleCreateMemo}
-            className="
-							px-8 py-3 rounded-lg font-semibold
-							bg-accent hover:bg-accent/90
-							text-bg-primary transition-colors
-							flex items-center gap-2 mx-auto
-						"
+            className="px-8 py-3 rounded-lg font-semibold bg-accent hover:bg-accent/90 text-bg-primary transition-colors flex items-center gap-2 mx-auto"
           >
             <span className="icon-[mdi--plus]" />
             新規メモを作成
